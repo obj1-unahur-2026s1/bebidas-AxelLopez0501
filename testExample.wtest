@@ -1,9 +1,42 @@
-import example.pepita
+import example.*
 
-describe "group of tests for pepita" {
-
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+describe "Grupo de test"{
+  test "La velocidad inicial de tito es 7"{
+    assert.equals(7,tito.getVelocidad())
   }
 
+  test "Si bebe 2 cm^3 de whisky su rendimiento será 0.81"{
+    tito.consumir(whisky, 2)
+    assert.equals(0.81, tito.rendimiento())
+  }
+
+  test "Si bebe 2 cm^3 de whisky su velocidad será 5.67"{
+    tito.consumir(whisky, 2)
+    assert.equals(5.67, tito.getVelocidad())
+  }
+
+  test "Si tito bebe 1cm**3 de cianuro su velocidad sera 0"{
+    tito.consumir(cianuro, 1)
+    assert.equals(0, tito.getVelocidad())
+  } 
+
+  test "Si tito bebe 1cm^3 de cianuro su rendimiento será 0"{
+    tito.consumir(cianuro, 0)
+    assert.equals(0, tito.rendimiento())
+  }
+
+  test "Si tito bebe 5 cm^3 de terere su rendimiento seguira siendo 1"{
+    tito.consumir(terere, 5)
+    assert.equals(1, tito.rendimiento())
+  }
+
+  test "Si tito bebe 20 cm^3 de terere su rendimiento sera 2"{
+    tito.consumir(terere, 20)
+    assert.equals(2, tito.rendimiento())
+  }
+
+  test "Si Tito bebe 20 cm^3 de terere su velocidad será 14"{
+    tito.consumir(terere, 20)
+    assert.equals(14, tito.getVelocidad())
+  }
 }
