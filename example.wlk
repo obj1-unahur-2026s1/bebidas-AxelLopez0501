@@ -22,14 +22,7 @@ object whisky {
 
 object terere {
     method getRendimiento(dosis){
-      var rendimiento
-      if(0.1 * dosis > 1){
-          rendimiento = 0.1 * dosis
-      }
-      else {
-        rendimiento = 1
-      }
-      return rendimiento 
+      return 1.max(dosis * 0.1) 
     }
 }
 
